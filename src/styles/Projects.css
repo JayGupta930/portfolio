@@ -1,0 +1,146 @@
+.projects {
+  padding: var(--section-padding);
+}
+
+.project-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-filters button {
+  padding: 8px 20px;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  border-radius: 30px;
+}
+
+.project-filters button.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.project-filters button:not(.active):hover {
+  color: var(--primary-color);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.project-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(94, 59, 238, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-link {
+  padding: 10px 20px;
+  background-color: var(--white);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: var(--text-dark);
+  color: var(--white);
+}
+
+.project-info {
+  padding: 20px;
+  background-color: var(--white);
+}
+
+.project-info h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.project-info p {
+  color: var(--text-light);
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  padding: 5px 10px;
+  background-color: var(--background-light);
+  border-radius: 20px;
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
