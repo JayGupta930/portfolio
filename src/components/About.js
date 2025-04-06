@@ -19,8 +19,8 @@ const About = () => {
         </div>
         <div className="about-text">
           <h3>I'm Jay Gupta, a passionate frontend developer based in India</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel tincidunt elit. Nulla facilisi. Cras accumsan nunc ut magna scelerisque, eget sagittis dui tincidunt. Donec auctor arcu in nulla suscipit, et pulvinar metus tincidunt.</p>
-          <p>Nam vestibulum tristique metus, sit amet finibus felis placerat non. Nullam ultrices ante vel magna efficitur, ut tempus eros varius. Proin eget dui ac magna imperdiet ultricies.</p>
+          <p>I specialize in building modern, responsive web applications using React and related technologies. With a keen eye for detail and a passion for creating intuitive user experiences, I strive to deliver high-quality code that brings designs to life.</p>
+          <p>My goal is to create web applications that not only look great but also perform exceptionally well. I'm constantly learning new technologies and methodologies to stay ahead in this ever-evolving field.</p>
           <div className="personal-info">
             <div className="info-item">
               <strong>Name:</strong> Jay Gupta
@@ -36,6 +36,30 @@ const About = () => {
             </div>
           </div>
           <a href="/resume/jay-gupta-cv.pdf" className="btn primary-btn" download>Download CV</a>
+        </div>
+        
+        <div className="timeline-section">
+          <h4>Education & Experience</h4>
+          <div className="timeline">
+            <div className="timeline-item">
+              <div className="timeline-date">2021 - Present</div>
+              <div className="timeline-title">Frontend Developer</div>
+              <div className="timeline-place">Tech Innovations Inc.</div>
+              <div className="timeline-description">Working on enterprise-level React applications, implementing modern UI/UX designs, and collaborating with cross-functional teams.</div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-date">2019 - 2021</div>
+              <div className="timeline-title">Junior Web Developer</div>
+              <div className="timeline-place">Digital Solutions Ltd.</div>
+              <div className="timeline-description">Developed responsive websites and implemented frontend features using HTML, CSS, and JavaScript.</div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-date">2015 - 2019</div>
+              <div className="timeline-title">Bachelor of Technology</div>
+              <div className="timeline-place">Indian Institute of Technology</div>
+              <div className="timeline-description">Computer Science major with focus on web technologies and software development.</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
