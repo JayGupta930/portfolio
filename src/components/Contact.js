@@ -18,9 +18,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add form submission logic here
     console.log('Form submitted:', formData);
-    // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -63,55 +61,60 @@ const Contact = () => {
           <div className="social-links">
             <a href="https://github.com/JayGupta930" className="social-icon"><i className="fab fa-github"></i></a>
             <a href="www.linkedin.com/in/jaygupta930" className="social-icon"><i className="fab fa-linkedin"></i></a>
-            {/* <a href="#" className="social-icon"><i className="fab fa-twitter"></i></a>
-            <a href="#" className="social-icon"><i className="fab fa-dribbble"></i></a> */}
           </div>
         </div>
         
         <div className="contact-form">
           <form onSubmit={handleSubmit}>
             <div className="form-row">
-              <div className="form-group">
+              <div className="form-group floating">
                 <input 
                   type="text" 
                   name="name" 
-                  placeholder="Your Name" 
+                  id="name"
                   value={formData.name}
                   onChange={handleChange}
                   required 
                 />
+                <label htmlFor="name">Your Name</label>
               </div>
-              <div className="form-group">
+              <div className="form-group floating">
                 <input 
                   type="email" 
                   name="email" 
-                  placeholder="Your Email" 
+                  id="email"
                   value={formData.email}
                   onChange={handleChange}
                   required 
                 />
+                <label htmlFor="email">Your Email</label>
               </div>
             </div>
-            <div className="form-group">
+            <div className="form-group floating">
               <input 
                 type="text" 
                 name="subject" 
-                placeholder="Subject" 
+                id="subject"
                 value={formData.subject}
                 onChange={handleChange}
                 required 
               />
+              <label htmlFor="subject">Subject</label>
             </div>
-            <div className="form-group">
+            <div className="form-group floating">
               <textarea 
                 name="message" 
-                placeholder="Your Message" 
+                id="message"
                 value={formData.message}
                 onChange={handleChange}
                 required
               ></textarea>
+              <label htmlFor="message">Your Message</label>
             </div>
-            <button type="submit" className="btn primary-btn">Send Message</button>
+            <button type="submit" className="btn primary-btn">
+              <span>Send Message</span>
+              <i className="fas fa-paper-plane"></i>
+            </button>
           </form>
         </div>
       </div>
