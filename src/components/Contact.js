@@ -38,7 +38,7 @@ const Contact = () => {
             <i className="fas fa-map-marker-alt"></i>
             <div>
               <h4>Location</h4>
-              <p>Jay's City, Country</p>
+              <p>Raipur, India</p>
             </div>
           </div>
           
@@ -46,7 +46,7 @@ const Contact = () => {
             <i className="fas fa-envelope"></i>
             <div>
               <h4>Email</h4>
-              <p>jayguptajaygupta8@gmail.com</p>
+              <p>jaygupta.works@gmail.com</p>
             </div>
           </div>
           
@@ -54,7 +54,7 @@ const Contact = () => {
             <i className="fas fa-phone"></i>
             <div>
               <h4>Phone</h4>
-              <p>+1 (123) 456-7890</p>
+              <p>+91 9302468900</p>
             </div>
           </div>
           
