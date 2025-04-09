@@ -34,22 +34,16 @@ const TypedText = ({ text }) => {
     setTimeout(type, 1000);
     
     return () => {
-      // Clean up if component unmounts
+
     };
   }, [text]);
   
   return <span ref={textRef} className="typed-text"></span>;
 };
 
-// Particle background component
-const ParticleBackground = () => {
-  return <div className="particles"></div>;
-};
-
 const Hero = () => {
   return (
     <section id="home" className="hero">
-      <ParticleBackground />
       
       <div className="hero-content">
         <div className="hero-text">

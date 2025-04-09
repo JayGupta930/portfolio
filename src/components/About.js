@@ -26,13 +26,13 @@ const About = () => {
               <strong>Name:</strong> Jay Gupta
             </div>
             <div className="info-item">
-              <strong>Email:</strong> jayguptajaygupta8@gmail.com
+              <strong>Email:</strong> jaygupta.works@gmail.com
             </div>
             <div className="info-item">
               <strong>Location:</strong> India
             </div>
             <div className="info-item">
-              <strong>Available:</strong> For Freelance / Full-time
+              <strong>Available:</strong> For Freelance/ Full-time
             </div>
           </div>
           <a href="/resume/jay-gupta-cv.pdf" className="btn primary-btn" download>Download CV</a>
@@ -42,21 +42,21 @@ const About = () => {
           <h4>Education & Experience</h4>
           <div className="timeline">
             <div className="timeline-item">
-              <div className="timeline-date">2021 - Present</div>
+              <div className="timeline-date">2022 - Present</div>
               <div className="timeline-title">Frontend Developer</div>
               <div className="timeline-place">Tech Innovations Inc.</div>
               <div className="timeline-description">Working on enterprise-level React applications, implementing modern UI/UX designs, and collaborating with cross-functional teams.</div>
             </div>
-            <div className="timeline-item">
+            {/* <div className="timeline-item">
               <div className="timeline-date">2019 - 2021</div>
               <div className="timeline-title">Junior Web Developer</div>
               <div className="timeline-place">Digital Solutions Ltd.</div>
               <div className="timeline-description">Developed responsive websites and implemented frontend features using HTML, CSS, and JavaScript.</div>
-            </div>
+            </div> */}
             <div className="timeline-item">
-              <div className="timeline-date">2015 - 2019</div>
+              <div className="timeline-date">2022 - Present</div>
               <div className="timeline-title">Bachelor of Technology</div>
-              <div className="timeline-place">Indian Institute of Technology</div>
+              <div className="timeline-place">Shri Shankaracharya Institute of Professional Management and Technology, Raipur</div>
               <div className="timeline-description">Computer Science major with focus on web technologies and software development.</div>
             </div>
           </div>
