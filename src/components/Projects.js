@@ -16,12 +16,12 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Portfolio Design",
-      category: "design",
+      title: "Uropine Admin Portal",
+      category: "web",
       image: "https://via.placeholder.com/350x250",
       description: "Modern UI/UX design for a personal portfolio",
-      technologies: ["Figma", "Adobe XD"],
-      link: "#"
+      technologies: ["React", "Firebase", "Material UI"],
+      link: "https://uropine-admin.web.app/admin-dashboard"
     },
     {
       id: 3,
