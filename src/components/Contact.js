@@ -46,7 +46,9 @@ const Contact = () => {
             <i className="fas fa-envelope"></i>
             <div>
               <h4>Email</h4>
-              <p>jaygupta.works@gmail.com</p>
+              <a href="mailto:jaygupta.works@gmail.com">
+                <p>jaygupta.works@gmail.com</p>
+              </a>
             </div>
           </div>
           
@@ -54,7 +56,9 @@ const Contact = () => {
             <i className="fas fa-phone"></i>
             <div>
               <h4>Phone</h4>
-              <p>+91 9302468900</p>
+              <a href="tel:+919302468900">
+                <p>+91 9302468900</p>
+              </a>
             </div>
           </div>
           

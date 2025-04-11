@@ -77,6 +77,20 @@
   color: var(--text-light);
 }
 
+.info-item a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-item a p {
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.info-item:hover a p {
+  color: var(--primary-color);
+}
+
 .social-links {
   display: flex;
   margin-top: 30px;
