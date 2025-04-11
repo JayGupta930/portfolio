@@ -3,28 +3,32 @@ import '../styles/Hero.css';
 import profileImage from '../assets/images/JAY.jpg'; 
 
 // Typing effect component
-const TypedText = ({ text }) => {
+const TypedText = ({ texts }) => {
   const textRef = useRef(null);
   
   useEffect(() => {
     const textElement = textRef.current;
-    const fullText = text;
-    let currentIndex = 0;
+    let currentTextIndex = 0;
+    let currentCharIndex = 0;
     let isDeleting = false;
     let typingSpeed = 150;
     
     const type = () => {
-      const currentText = fullText.substring(0, currentIndex);
-      textElement.textContent = currentText;
+      const currentText = texts[currentTextIndex];
+      const displayText = currentText.substring(0, currentCharIndex);
+      textElement.textContent = displayText;
       
-      if (!isDeleting && currentIndex < fullText.length) {
-        currentIndex++;
+      if (!isDeleting && currentCharIndex < currentText.length) {
+        currentCharIndex++;
         typingSpeed = 150;
-      } else if (isDeleting && currentIndex > 0) {
-        currentIndex--;
+      } else if (isDeleting && currentCharIndex > 0) {
+        currentCharIndex--;
         typingSpeed = 75;
       } else {
         isDeleting = !isDeleting;
+        if (!isDeleting) {
+          currentTextIndex = (currentTextIndex + 1) % texts.length;
+        }
         typingSpeed = isDeleting ? 1000 : 1000;
       }
       
@@ -34,9 +38,8 @@ const TypedText = ({ text }) => {
     setTimeout(type, 1000);
     
     return () => {
-
     };
-  }, [text]);
+  }, [texts]);
   
   return <span ref={textRef} className="typed-text"></span>;
 };
@@ -50,7 +53,7 @@ const Hero = () => {
           <h4 className="animated-entry">Hello, I'm</h4>
           <h1 className="animated-entry">Jay Gupta</h1>
           <h2 className="animated-entry">
-            I'm a <TypedText text="Frontend Developer" />
+            I'm a <TypedText texts={["Frontend Developer", "UI/UX Designer"]} />
           </h2>
           <p className="animated-entry">I create stunning web experiences with modern technologies</p>
           <div className="hero-buttons animated-entry">
