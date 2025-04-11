@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import '../styles/Contact.css';
+import emailjs from '@emailjs/browser';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Contact = () => {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -16,14 +20,52 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(true);
+
+    try {
+      const result = await emailjs.sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      );
+
+      if (result.text === 'OK') {
+        toast.success('Message sent successfully! I will get back to you soon.');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }
+    } catch (error) {
+      toast.error('Failed to send message. Please try again later.');
+      console.error('Error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section id="contact" className="contact">
+      <Toaster position="bottom-right" toastOptions={{
+        style: {
+          background: '#333',
+          color: '#fff',
+        },
+        success: {
+          duration: 5000,
+          iconTheme: {
+            primary: '#4caf50',
+            secondary: '#fff',
+          },
+        },
+        error: {
+          duration: 5000,
+          iconTheme: {
+            primary: '#f44336',
+            secondary: '#fff',
+          },
+        },
+      }} />
       <div className="section-header">
         <h2>Get In Touch</h2>
         <div className="section-divider"></div>
@@ -69,7 +111,7 @@ const Contact = () => {
         </div>
         
         <div className="contact-form">
-          <form onSubmit={handleSubmit}>
+          <form ref={form} onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group floating">
                 <input 
@@ -115,9 +157,13 @@ const Contact = () => {
               ></textarea>
               <label htmlFor="message">Your Message</label>
             </div>
-            <button type="submit" className="btn primary-btn">
-              <span>Send Message</span>
-              <i className="fas fa-paper-plane"></i>
+            <button 
+              type="submit" 
+              className="btn primary-btn"
+              disabled={isSubmitting}
+            >
+              <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+              <i className="  fas fa-paper-plane"></i>
             </button>
           </form>
         </div>
