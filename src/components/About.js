@@ -39,14 +39,14 @@ const About = () => {
         </div>
         
         <div className="timeline-section">
-          <h4>Education & Experience</h4>
+          <h4>Education</h4>
           <div className="timeline">
-            <div className="timeline-item">
+            {/* <div className="timeline-item">
               <div className="timeline-date">2022 - Present</div>
               <div className="timeline-title">Frontend Developer</div>
               <div className="timeline-place">Tech Innovations Inc.</div>
               <div className="timeline-description">Working on enterprise-level React applications, implementing modern UI/UX designs, and collaborating with cross-functional teams.</div>
-            </div>
+            </div> */}
             {/* <div className="timeline-item">
               <div className="timeline-date">2019 - 2021</div>
               <div className="timeline-title">Junior Web Developer</div>
@@ -54,8 +54,8 @@ const About = () => {
               <div className="timeline-description">Developed responsive websites and implemented frontend features using HTML, CSS, and JavaScript.</div>
             </div> */}
             <div className="timeline-item">
-              <div className="timeline-date">2022 - Present</div>
-              <div className="timeline-title">Bachelor of Technology</div>
+              <div className="timeline-date">2022 - 2026</div>
+              <div className="timeline-title">Bachelor of Technology - Computer Science & Engineering</div>
               <div className="timeline-place">Shri Shankaracharya Institute of Professional Management and Technology, Raipur</div>
               <div className="timeline-description">Computer Science major with focus on web technologies and software development.</div>
             </div>
