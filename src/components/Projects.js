@@ -7,12 +7,12 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Website",
+      title: "JSON Code Editor",
       category: "web",
       image: "https://via.placeholder.com/350x250",
-      description: "A fully responsive e-commerce platform built with React",
+      description: "A fully responsive JSON Code Editor built with React",
       technologies: ["React", "Node.js", "MongoDB"],
-      link: "#"
+      link: "https://github.com/JayGupta930/json_code_editor"
     },
     {
       id: 2,
