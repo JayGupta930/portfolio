@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/About.css';
 import profileImage from '../assets/images/JAY.jpg';
+import resumePDF from '../assets/pdfs/Jay_Gupta_RESUME.pdf';
 
 const About = () => {
   return (
@@ -35,7 +36,7 @@ const About = () => {
               <strong>Available:</strong> For Freelance/ Full-time
             </div>
           </div>
-          <a href="/resume/jay-gupta-cv.pdf" className="btn primary-btn" download>Download CV</a>
+          <a href={resumePDF} className="btn primary-btn" download>Download RESUME</a>
         </div>
         
         <div className="timeline-section">
