@@ -2,10 +2,53 @@ import React from 'react';
 import '../styles/About.css';
 import profileImage from '../assets/images/JAY.jpg';
 import resumePDF from '../assets/pdfs/Jay_Gupta_RESUME.pdf';
+import toast, { Toaster } from 'react-hot-toast';
 
 const About = () => {
+  const handleDownloadResume = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(resumePDF);
+      if (!response.ok) throw new Error('Failed to download resume');
+      
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Jay_Gupta_RESUME.pdf';
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+      
+      toast.success('Resume downloaded successfully!');
+    } catch (error) {
+      toast.error('Failed to download resume. Please try again.');
+    }
+  };
+
   return (
     <section id="about" className="about">
+      <Toaster position="bottom-right" toastOptions={{
+        style: {
+          background: '#333',
+          color: '#fff',
+        },
+        success: {
+          duration: 5000,
+          iconTheme: {
+            primary: '#4caf50',
+            secondary: '#fff',
+          },
+        },
+        error: {
+          duration: 5000,
+          iconTheme: {
+            primary: '#f44336',
+            secondary: '#fff',
+          },
+        },
+      }} />
       <div className="section-header">
         <h2>About Me</h2>
         <div className="section-divider"></div>
@@ -36,7 +79,7 @@ const About = () => {
               <strong>Available:</strong> For Freelance/ Full-time
             </div>
           </div>
-          <a href={resumePDF} className="btn primary-btn" download>Download RESUME</a>
+          <a href={resumePDF} className="btn primary-btn" onClick={handleDownloadResume}>Download RESUME</a>
         </div>
         
         <div className="timeline-section">
