@@ -4,6 +4,9 @@ Welcome to my personal portfolio website — a modern, clean, and fully responsi
 
 ---
 
+[![Live Demo](https://img.shields.io/badge/🌐-Live%20Demo-1e90ff?style=for-the-badge&labelColor=black)](https://jaygupta.web.app/)
+
+
 ## 📌 Features
 
 - 🖥️ Responsive, mobile-friendly UI
