@@ -5,6 +5,7 @@ Welcome to my personal portfolio website — a modern, clean, and fully responsi
 ---
 
 [![Live Demo](https://img.shields.io/badge/🌐-Live%20Demo-1e90ff?style=for-the-badge&labelColor=black)](https://jaygupta.web.app/)
+[![Commit Activity](https://img.shields.io/github/commit-activity/t/JayGupta930/portfolio?style=for-the-badge&color=black)](https://github.com/JayGupta930/portfolio/commits)
 
 
 ## 📌 Features
